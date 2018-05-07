@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace RouterLibrary
 {
-    public class RouterDel : LocalNet
+    public class RouterDel : LocalNet 
     {
         public RouterDel(string name, int id) : base(name, id)
         {

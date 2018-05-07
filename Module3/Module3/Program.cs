@@ -12,21 +12,30 @@ namespace Module3
     {
         static void Main(string[] args)
         {
+            
             while (true)
             {
+                Console.WriteLine($"#### To make a choise use numpad keyboard ####");
+                Console.WriteLine();
                 Console.WriteLine($"1:Added the router. ");
+                Console.WriteLine($"2:Show all routers. ");
+                Console.WriteLine($"3:Show break routers. ");
+                Console.WriteLine($"4:Show work of local net. ");
                 ConsoleKey action = Console.ReadKey().Key;
 
                 Console.Clear();
                 switch (action)
                 {
                     case ConsoleKey.NumPad1:
-                        LocalNet.New();
+                        LocalNet.Add();
                         break;
-                    
+                    case ConsoleKey.NumPad2:
+                        LocalNet.Look();
+                        break;
+
                 }
 
-
+                Console.Clear();
             }
             
         }

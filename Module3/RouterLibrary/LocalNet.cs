@@ -10,28 +10,31 @@ namespace RouterLibrary
     public class LocalNet : Routerboard
     {
         public static List<Routerboard> Routers2;
-        
-        public LocalNet(string name, int id) : base(name, id)
+
+        public LocalNet(string name, int id) 
         {
+            Name = name;
+            Id = id;
         }
 
         public static LocalNet New()
         {
             Console.WriteLine($"Enter the model name of router:");
-            Name = Console.ReadLine();
+            var name = Console.ReadLine();
             Console.WriteLine($"Enter the model id of router:");
-            Id = Convert.ToInt32(Console.ReadLine());
-            return new LocalNet(Name, Id);
+            var id = Convert.ToInt32(Console.ReadLine());
+            return new LocalNet(name:name, id:id);
         }
-      
+
         public static void Add()
         {
             Routers.Add(New());
+            return;
         }
 
-        
 
-        public static void LocalNetWork () 
+
+        public static void LocalNetWork()
         {
             Thread delRouter = new Thread(DelRouter);
 
@@ -46,6 +49,16 @@ namespace RouterLibrary
             Thread.Sleep(3000);
         }
 
-        
+        public static void Look()
+        {
+            foreach (var look in Routers)
+            {
+                Console.WriteLine($"{look.Name}, {look.Id}");
+            }
+
+            Console.ReadLine();
+        }
+
+
     }
 }
