@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RouterLibrary\RouterLibrary.csproj">
+      <Project>{304cfde1-b1ad-4e62-bbc6-53b020d4b04d}</Project>
+      <Name>RouterLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
